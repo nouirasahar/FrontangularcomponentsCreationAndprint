@@ -1,0 +1,21 @@
+<p>Students Table:</p>
+
+<div *ngIf="tables.length > 0">
+  <div *ngFor="let table of tables">
+    <h3>{{ table }}</h3> <!-- Dynamically display the table name -->
+
+    <!-- Only show the students table -->
+    <table border="1" *ngIf="table === 'students'">
+      <thead>
+        <tr>
+          <th *ngFor="let column of getColumns(table)">{{ column }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of dataMap[table]">
+          <td *ngFor="let column of getColumns(table)">{{ row[column] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
