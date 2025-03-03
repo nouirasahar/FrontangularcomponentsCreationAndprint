@@ -2,8 +2,6 @@
 
 <div *ngIf="tables.length > 0">
   <div *ngFor="let table of tables">
-    <h3>{{ table }}</h3>
-
     <!-- Only show the teachers table -->
     <table border="1" *ngIf="table === 'teachers'">
       <thead>
